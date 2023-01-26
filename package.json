@@ -1,0 +1,14 @@
+{
+  "name": "node-react",
+  "version": "1.0.0",
+  "scripts": {
+    "install_frontend": "cd frontend && npm install",
+    "install_backend": "cd backend && python3 -m pip install -r requirements.txt",
+    "install": "npm run install_frontend && npm run install_backend",
+    "start": "concurrently \"cd frontend && npm run start\" \"cd backend && flask --app integrationAppToken run --port=8080\"",
+    "clean": "rm -rf **/node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
